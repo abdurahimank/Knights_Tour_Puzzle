@@ -9,7 +9,7 @@ The knight's tour problem uses a chessboard and a knight.
 5. You win if you visit every square on the board.
 6. You lose if you fail to visit every square only once without revisiting it.
 
-![KnightMoves](URL)
+![KnightMoves](https://github.com/abdurahimank/Knights_Tour_Puzzle/blob/main/images/image_1.PNG)
 
 
 ### References
