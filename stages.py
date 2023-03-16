@@ -1,4 +1,4 @@
-# Stage 3/6: Where to next?
+# Stage 4/6: Looking ahead
 class KnightTourPuzzle:
     def __init__(self):
         self.board = []
@@ -25,11 +25,17 @@ class KnightTourPuzzle:
             except ValueError:
                 print("Invalid dimensions!")
 
-    def valid_move(self, x, y):
+    def valid_move(self, x, y, option="count"):
         valid_move = [(-2, -1), (-2, 1), (-1, -2), (-1, 2), (1, 2), (1, -2), (2, -1), (2, 1)]
+        total_move = 0
         for i in valid_move:
-            if 1 <= x + i[0] <= self.row and 1 <= y + i[1] <= self.col:
-                self.board[x + i[0] - 1][y + i[1] - 1] = " " * (self.cell_size - 1) + "O"
+            if 1 <= x + i[0] <= self.row and 1 <= y + i[1] <= self.col \
+                    and self.board[x + i[0] - 1][y + i[1] - 1] == "_" * self.cell_size:
+                total_move += 1
+                if option == "replace":
+                    self.board[x + i[0] - 1][y + i[1] - 1] = " " * (self.cell_size - 1) \
+                                                             + str(self.valid_move(x + i[0], y + i[1]))
+        return total_move
 
     def start(self):
         self.create_board()
@@ -38,7 +44,7 @@ class KnightTourPuzzle:
                 y, x = [int(i) for i in input("Enter the knight's starting position: ").split()]
                 if 1 <= x <= self.row and 1 <= y <= self.col:
                     self.board[x - 1][y - 1] = " " * (self.cell_size - 1) + "X"
-                    self.valid_move(x, y)
+                    self.valid_move(x, y, "replace")
                     self.display()
                     break
                 else:
