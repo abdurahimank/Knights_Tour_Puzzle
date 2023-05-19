@@ -23,5 +23,9 @@ The main **objective of the game** is to visit all cell without revisiting the o
 
 
 ### References
-1. [HyperSkill](https://hyperskill.org/projects/141)
+1. [HyperSkill](https://hyperskill.org/projects/141) <br>
+   a. [Stage 1](https://hyperskill.org/projects/141/stages/746/implement) <br>
+   b. [Stage 2](https://hyperskill.org/projects/141/stages/747/implement) <br>
+   c. [Stage 3](https://hyperskill.org/projects/141/stages/748/implement) <br>
+   d. [Stage 4]()
 2. [Wiki](https://en.wikipedia.org/wiki/Knight%27s_tour)
